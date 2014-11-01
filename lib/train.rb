@@ -6,7 +6,7 @@ class Train
     @coaches = []
   end
 
-  def move(station)
+  def move_to(station)
     @location = station
   end
 

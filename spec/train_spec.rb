@@ -1,7 +1,7 @@
 require 'train'
 
 describe Train do
-  context 'moves around' do
+  context 'is made and moves around' do
 
     
     let(:depot) {double :station}
@@ -14,7 +14,7 @@ describe Train do
     end
 
     it 'can move to another station' do
-      train.move(old_street)
+      train.move_to(old_street)
       expect(train.location).to eq(old_street)
     end
 
@@ -23,11 +23,17 @@ describe Train do
       expect(train.coaches).to eq([coach])
     end
 
-    it 'can remove a coach' do # maybe only last coach
+    it 'can remove a coach' do 
       train.add_coach(coach)
       train.remove_coach(coach)
       expect(train.coaches).to eq([])
     end
+
+    # not implemented
+    # it 'can only remove the last coach'
+    # it 'can only add/remove coaches in the depot'
+    # it 'needs a driver before it can move'
+    # it 'needs an engine before it can move'
 
   end
 
