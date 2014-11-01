@@ -6,6 +6,7 @@ describe Train do
     
     let(:depot) {double :station}
     let(:old_street) {double :station}
+    let(:coach) {double :coach}
     let(:train) {Train.new(depot)}
 
     it 'starts in the depot' do
@@ -15,6 +16,11 @@ describe Train do
     it 'can move to another station' do
       train.move(old_street)
       expect(train.location).to eq(old_street)
+    end
+
+    it 'can add a coach' do
+      train.add_coach(coach)
+      expect(train.coaches).to eq([coach])
     end
 
   end
