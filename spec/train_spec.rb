@@ -23,6 +23,12 @@ describe Train do
       expect(train.coaches).to eq([coach])
     end
 
+    it 'can remove a coach' do # maybe only last coach
+      train.add_coach(coach)
+      train.remove_coach(coach)
+      expect(train.coaches).to eq([])
+    end
+
   end
 
 end
