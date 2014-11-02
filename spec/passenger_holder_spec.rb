@@ -15,5 +15,10 @@ shared_examples 'a passenger container' do
       container.receive(passenger)
       expect(container.passengers).to eq([passenger])
     end
+    it 'can release a passenger' do
+      container.receive(passenger)
+      container.release(passenger)
+      expect(container.passengers).to eq([])
+    end
   end
 end
