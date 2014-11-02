@@ -1,6 +1,8 @@
 module PassengerContainer
   attr_reader :passengers
 
+  DEFAULT_CAPACITY = 40
+
   def passengers
     @passengers ||= []    
   end
@@ -12,4 +14,13 @@ module PassengerContainer
   def release(passenger)
     passengers.delete(passenger)
   end
+
+  def capacity
+    @capacity ||= DEFAULT_CAPACITY
+  end
+
+  def capacity=(new_capacity)
+    @capacity = new_capacity
+  end
+
 end
