@@ -11,7 +11,7 @@ module PassengerContainer
     passengers << passenger
   end
 
-  def release(passenger)
+  def alight(passenger)
     raise "Passenger not found" if passengers.delete(passenger).nil?
   end
 

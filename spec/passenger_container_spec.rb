@@ -18,9 +18,9 @@ shared_examples 'a passenger container' do
       expect(container.passengers).to include(passenger)
     end
 
-    it 'can release a passenger' do
+    it 'can alight a passenger' do
       container.board(passenger)
-      container.release(passenger)
+      container.alight(passenger)
       expect(container.passengers).to eq([])
     end
 
@@ -43,8 +43,8 @@ shared_examples 'a passenger container' do
       expect( lambda{container.board(passenger)}).to raise_error(RuntimeError)
     end
 
-    it 'can\'t release a passeneger who isn\'t in the container' do
-      expect( lambda{container.release(passenger)}).to raise_error(RuntimeError)
+    it 'can\'t alight a passeneger who isn\'t in the container' do
+      expect( lambda{container.alight(passenger)}).to raise_error(RuntimeError)
     end
 
 end
