@@ -26,6 +26,12 @@ describe Station do
       expect(station.passengers_at_destination).to include(passenger)
     end 
 
+    it 'knows which passengers are waiting to travel' do
+      station.board(passenger)
+      allow(passenger).to receive(:at_destination?).and_return(false)
+      expect(station.passengers_waiting_to_travel).to include(passenger)
+    end 
+
     it 'touches out passengers at destination' do
       station.board(passenger)
       allow(passenger).to receive(:at_destination?).and_return(true)

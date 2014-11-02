@@ -16,6 +16,10 @@ class Station
     passengers.select {|passenger| passenger.at_destination?(self)}
   end
 
+  def passengers_waiting_to_travel
+    passengers.reject {|passenger| passenger.at_destination?(self)}
+  end
+
   def touch_out_passengers_at_destination
     passengers_at_destination.each {|passenger| self.touch_out(passenger)}
   end
