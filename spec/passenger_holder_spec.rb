@@ -13,7 +13,7 @@ shared_examples 'a passenger container' do
       expect(container.passengers).to eq([])
     end
 
-    it 'can hold a passenger' do
+    it 'can receive a passenger' do
       container.receive(passenger)
       expect(container.passengers).to include(passenger)
     end
@@ -38,5 +38,9 @@ shared_examples 'a passenger container' do
       expect(container).to be_full
     end
 
+    it 'can\'t receive a passenger when full' do
+      fill_container
+      expect( lambda{container.receive(passenger)}).to raise_error(RuntimeError)
+    end
 
 end

@@ -7,6 +7,7 @@ module PassengerContainer
   end
 
   def receive(passenger)
+    raise "Can't receive passenger when full" if full?
     passengers << passenger
   end
 
