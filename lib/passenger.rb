@@ -1,16 +1,15 @@
 class Passenger
 
-  attr_reader :destination
+  attr_reader :destination, :cash
 
-  def initialize(destination)
+  def initialize(destination, cash)
     @destination = destination
+    @cash = cash
   end
 
   def at_destination?(current_station)
     current_station == @destination
   end
   
-  def touch_out_passengers_at_destination
 
-  end
 end
