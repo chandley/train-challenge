@@ -8,11 +8,23 @@ describe Station do
   let(:station) {Station.new}
   let(:passenger) {double :passenger}
 
-    it 'allows passenger to touch in' do
+    it 'passenger can touch in' do
       station.touch_in(passenger)
       expect(station.passengers).to include(passenger)
     end
 
+    it 'passenger can touch out' do
+      station.board(passenger)
+      station.touch_out(passenger)
+      expect(station.passengers).to_not include(passenger)
+    end
+
+    # it 'touches out passengers at destination' do
+    #   station.board(passenger)
+    #   allow(passenger).to receive(:destination).and_return(:station)
+    #   station.touch_out_passengers_at_destination
+    #   expect(station.passengers).to_not include(passenger)
+    # end
   end
 end
 
