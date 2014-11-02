@@ -3,8 +3,8 @@ require 'passenger'
 describe 'Passenger' do
   context 'rides the trains' do
 
-    let(:passenger) {Passenger.new}
     let(:station) { double :station}
+    let(:passenger) {Passenger.new(station)}    
     let(:other_station) { double :station}
 
     it 'has a destination' do
@@ -14,6 +14,10 @@ describe 'Passenger' do
     it 'knows when at destination' do
       expect(passenger.at_destination?(station)).to be(true)
     end 
+
+    it 'knows when not at destination' do
+      expect(passenger.at_destination?(other_station)).to be(false)
+    end
 
   end
 end 

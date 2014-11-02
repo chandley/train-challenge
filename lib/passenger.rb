@@ -1,11 +1,13 @@
 class Passenger
 
-  def destination
-    :station
+  attr_reader :destination
+
+  def initialize(destination)
+    @destination = destination
   end
 
-  def at_destination?(station)
-    true
+  def at_destination?(current_station)
+    current_station == @destination
   end
 
 end
