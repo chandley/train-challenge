@@ -1,5 +1,4 @@
 module PassengerContainer
-  attr_reader :passengers
 
   DEFAULT_CAPACITY = 40
 
@@ -21,6 +20,10 @@ module PassengerContainer
 
   def capacity=(new_capacity)
     @capacity = new_capacity
+  end
+
+  def full?
+    passengers.size >= capacity
   end
 
 end
