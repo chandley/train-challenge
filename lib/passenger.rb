@@ -1,12 +1,7 @@
 class Passenger
 
   def destination
-    :old_street
+    :station
   end
-
-  def touch_in(station)
-    station.board(self)
-  end
-
 
 end
