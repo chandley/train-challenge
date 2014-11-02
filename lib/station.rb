@@ -4,7 +4,8 @@ class Station
   include PassengerContainer
 
   def touch_in(passenger)
-    board(passenger)
+    raise "Entry refused - low balance" if passenger.cash <= 2
+    board(passenger) 
   end
 
   def touch_out(passenger)

@@ -9,6 +9,7 @@ describe Station do
   let(:passenger) {double :passenger}
 
     it 'passenger can touch in' do
+      allow(passenger).to receive(:cash).and_return(20)
       station.touch_in(passenger)
       expect(station.passengers).to include(passenger)
     end
@@ -24,6 +25,11 @@ describe Station do
       allow(passenger).to receive(:at_destination?).and_return(true)
       station.touch_out_passengers_at_destination
       expect(station.passengers).to_not include(passenger)
+    end
+
+    it 'passenger can\'t touch in if cash = 0' do
+      allow(passenger).to receive(:cash).and_return(0)
+      expect( lambda{station.touch_in(passenger)}).to raise_error(RuntimeError)
     end
   end
 end
