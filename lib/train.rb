@@ -17,4 +17,5 @@ class Train
   def remove_coach(coach)
     @coaches.delete(coach)
   end
+  
 end

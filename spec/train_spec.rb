@@ -2,7 +2,6 @@ require 'train'
 
 describe Train do
   context 'is made and moves around' do
-
     
     let(:depot) {double :station}
     let(:old_street) {double :station}
@@ -24,7 +23,7 @@ describe Train do
     end
 
     it 'can remove a coach' do 
-      train.add_coach(coach)
+      train. add_coach(coach)
       train.remove_coach(coach)
       expect(train.coaches).to eq([])
     end
