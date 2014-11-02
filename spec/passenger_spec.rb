@@ -12,8 +12,8 @@ describe 'Passenger' do
     end
 
     it 'can touch in at a station' do
-      allow(:station).to receive(:receive)
-      passenger.touch_in(:station)
+      expect(station).to receive(:board)
+      passenger.touch_in(station)
     end
 
 

@@ -5,7 +5,7 @@ class Passenger
   end
 
   def touch_in(station)
-    station.receive(self)
+    station.board(self)
   end
 
 
