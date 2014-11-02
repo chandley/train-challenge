@@ -12,7 +12,7 @@ module PassengerContainer
   end
 
   def release(passenger)
-    passengers.delete(passenger)
+    raise "Passenger not found" if passengers.delete(passenger).nil?
   end
 
   def capacity

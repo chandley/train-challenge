@@ -43,4 +43,8 @@ shared_examples 'a passenger container' do
       expect( lambda{container.receive(passenger)}).to raise_error(RuntimeError)
     end
 
+    it 'can\'t release a passneger who isn\'t in the container' do
+      expect( lambda{container.release(passenger)}).to raise_error(RuntimeError)
+    end
+
 end
