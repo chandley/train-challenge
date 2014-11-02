@@ -19,12 +19,12 @@ describe Station do
       expect(station.passengers).to_not include(passenger)
     end
 
-    # it 'touches out passengers at destination' do
-    #   station.board(passenger)
-    #   allow(passenger).to receive(:destination).and_return(:station)
-    #   station.touch_out_passengers_at_destination
-    #   expect(station.passengers).to_not include(passenger)
-    # end
+    it 'touches out passengers at destination' do
+      station.board(passenger)
+      allow(passenger).to receive(:at_destination?).and_return(true)
+      station.touch_out_passengers_at_destination
+      expect(station.passengers).to_not include(passenger)
+    end
   end
 end
 
