@@ -43,6 +43,8 @@ describe Station do
       allow(passenger).to receive(:cash).and_return(0)
       expect( lambda{station.touch_in(passenger)}).to raise_error(RuntimeError)
     end
+
+    it 'knows if a train is at the station'
   end
 end
 

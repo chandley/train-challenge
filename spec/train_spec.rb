@@ -25,7 +25,7 @@ describe Train do
     it 'can remove a coach' do 
       train. add_coach(coach)
       train.remove_coach(coach)
-      expect(train.coaches).to eq([])
+      expect(train.coaches).to be_empty
     end
 
     # not implemented

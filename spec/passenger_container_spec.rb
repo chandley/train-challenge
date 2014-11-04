@@ -10,7 +10,7 @@ shared_examples 'a passenger container' do
     end
 
     it 'starts without any passengers' do
-      expect(container.passengers).to eq([])
+      expect(container.passengers).to be_empty
     end
 
     it 'can board a passenger' do
@@ -21,7 +21,7 @@ shared_examples 'a passenger container' do
     it 'can alight a passenger' do
       container.board(passenger)
       container.alight(passenger)
-      expect(container.passengers).to eq([])
+      expect(container.passengers).to be_empty
     end
 
     it 'has a capacity' do
