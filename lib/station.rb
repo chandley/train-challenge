@@ -23,4 +23,8 @@ class Station
   def touch_out_passengers_at_destination
     passengers_at_destination.each {|passenger| self.touch_out(passenger)}
   end
+
+  def containing_train?
+    false
+  end
 end

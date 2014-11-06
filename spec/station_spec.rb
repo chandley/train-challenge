@@ -44,7 +44,9 @@ describe Station do
       expect( lambda{station.touch_in(passenger)}).to raise_error(RuntimeError)
     end
 
-    it 'knows if a train is at the station'
+    it 'it starts with no train at the station' do
+      expect(station).not_to be_containing_train
+    end
   end
 end
 
