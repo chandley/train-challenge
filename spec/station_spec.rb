@@ -1,4 +1,5 @@
 require 'station'
+require 'spec_helper'
 require_relative 'passenger_container_spec'
 
 describe Station do

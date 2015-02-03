@@ -1,4 +1,5 @@
 require 'train'
+require 'spec_helper'
 
 describe Train do
   context 'is made and moves around' do

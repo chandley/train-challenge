@@ -1,4 +1,5 @@
 require './lib/passenger_container'
+require 'spec_helper'
 
 shared_examples 'a passenger container' do
 

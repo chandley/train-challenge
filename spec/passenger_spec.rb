@@ -1,4 +1,5 @@
 require 'passenger'
+require 'spec_helper'
 
 describe 'Passenger' do
   context 'rides the trains' do
